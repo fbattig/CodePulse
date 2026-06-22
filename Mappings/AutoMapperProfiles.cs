@@ -10,13 +10,17 @@ namespace CodePulse.API.Mappings
         {
             // Category
             CreateMap<Category, CategoryDto>().ReverseMap();
-            CreateMap<CreateCategoryRequestDto, Category>();
-            CreateMap<UpdateCategoryRequestDto, Category>();
+            CreateMap<CreateCategoryRequestDto, Category>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
+            CreateMap<UpdateCategoryRequestDto, Category>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
 
             // BlogPost
             CreateMap<BlogPost, BlogPostDto>().ReverseMap();
-            CreateMap<CreateBlogPostRequestDto, BlogPost>();
-            CreateMap<UpdateBlogPostRequestDto, BlogPost>();
+            CreateMap<CreateBlogPostRequestDto, BlogPost>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
+            CreateMap<UpdateBlogPostRequestDto, BlogPost>()
+                .ForMember(dest => dest.Id, opt => opt.Ignore());
         }
     }
 }

@@ -4,6 +4,8 @@
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <!-- The test project lives in a subfolder; keep its files out of this project's globs. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);CodePulse.API.Tests\**</DefaultItemExcludes>
   </PropertyGroup>
 
   <ItemGroup>
